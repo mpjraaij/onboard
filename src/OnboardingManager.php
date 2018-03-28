@@ -2,6 +2,8 @@
 
 namespace Calebporzio\Onboard;
 
+use App\User;
+
 /**
  * The gateway into the package. This class exposes the overall
  * state of the onboarding instance. It will typically be 
@@ -21,7 +23,7 @@ class OnboardingManager {
 	 * @param mixed $user The parent app's user model.
 	 * @param \Calebporzio\Onboard\OnboardingSteps $onboardingSteps
 	 */
-	public function __construct($user, OnboardingSteps $onboardingSteps)
+	public function __construct(User $user, OnboardingSteps $onboardingSteps)
 	{
 		$this->steps = $onboardingSteps->steps($user);
 	}
