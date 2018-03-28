@@ -70,9 +70,8 @@ class OnboardingManager {
      */
     public function nextUnfinishedStep()
     {
-    	return 'blaat';
-        // return collect($this->steps)->first(function ($step) {
-        //     return $step->incomplete();
-        // });
+        return collect($this->steps)->first(function ($step) {
+            return $step->incomplete();
+        });
 	}
 }
